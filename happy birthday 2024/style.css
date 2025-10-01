@@ -1,106 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
-:root {
+:root{
     --color-pink: #feecea;
     --color-white: #fff;
     --color-black: #333;
     --color-text-pink: #ff7882;
     --color-heart: #F61F1F;
     --color-bg-letter: #fff8e4;
-    --color-border: # DACCBF;
+    --color-border: #DACCBF;
 }
-
-html {
+html{
     height: 100%;
 }
-
 body {
     position: relative;
     font-size: 16px;
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: linear-gradient(var(--color-pink), var(--color-pink));
-    overflow-x: hidden;
+    background-image:linear-gradient(var(--color-pink), var(--color-pink));
+    overflow-x: hidden; /* Ngăn scroll ngang trên mobile */
 }
-
-#wrapper {
+#wrapper{
     position: relative;
     background-color: transparent;
-    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent),
-                      linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent);
-    height: 100%;
-    background-size: 80px 80px;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255,1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent);
+    height:100%;
+    background-size:80px 80px;
     overflow: hidden;
     z-index: 1;
 }
-
-.flag__birthday {
+.flag__birthday{
     display: flex;
     justify-content: space-between;
     transform: translateY(-200px);
     animation: translateYFlag 1.5s 2s forwards;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 5;
 }
-
-@keyframes translateYFlag {
-    to {
+@keyframes translateYFlag{
+    to{
         transform: translateY(-10px);
     }
 }
-
-.flag__birthday .flag__left {
-    transform: rotate(-10deg) translate(-20px, 30px);
+.flag__birthday .flag__left{
+    transform: rotate(-10deg) translate(-20px,30px);
 }
-
-.flag__birthday .flag__right {
-    transform: rotate(10deg) translate(20px, 30px) scaleX(-1);
+.flag__birthday .flag__right{
+    transform: rotate(10deg) translate(20px,30px) scaleX(-1);
 }
-
-.content {
+.content{
     width: 100%;
     position: relative;
     display: flex;
     padding-top: 3rem;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
 }
-
-.content .left,
-.content .right {
+.content .left, .content .right{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.content .left {
+.content .left{
     width: 40%;
 }
-
-.content .right {
+.content .right{
     width: 60%;
 }
-
 .left .btn {
     transform: scale(0);
     animation: scaleCricle 2s 16s forwards ease-in-out;
 }
-
-#btn__letter {
+#btn__letter{
     position: relative;
     margin-top: 30px;
     background-color: var(--color-text-pink);
@@ -118,39 +94,34 @@ body {
     transform: scale(1);
     transition: all .5s ease-in-out;
 }
-
-#btn__letter:active {
+#btn__letter:active{
     transform: scale(0.7);
 }
-
-#btn__letter i {
+#btn__letter i{
     margin-left: 5px;
 }
-
-#btn__letter:hover {
+#btn__letter:hover{
     border-color: var(--color-heart);
     background-color: var(--color-heart);
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-#btn__letter:hover i {
+#btn__letter:hover i{
     animation: rotateHeart 1s infinite linear;
 }
-
-@keyframes rotateHeart {
-    0%, 50%, 100% {
+@keyframes rotateHeart{
+    0%,50%, 100%{
         transform: rotate(0deg);
     }
-    25% {
+    25%{
         transform: rotate(12deg);
     }
-    75% {
+    75%{
         transform: rotate(-12deg);
     }
 }
-
-.title {
+.title{
     position: relative;
     width: 100%;
     display: flex;
@@ -160,45 +131,38 @@ body {
     flex-direction: column;
     perspective: 1000px;
 }
-
-.title .happy,
-.title .birthday {
+.title .happy, .title .birthday{
     position: relative;
-    text-shadow: 4px 4px var(--color-black),
-                 -4px 4px var(--color-black),
-                 4px -4px var(--color-black),
-                 -4px -4px var(--color-black),
-                 4px 8px 0 var(--color-black);
+    text-shadow: 4px 4px var(--color-black), 
+                -4px 4px var(--color-black), 
+                4px -4px var(--color-black), 
+                -4px -4px var(--color-black), 
+                4px 8px 0 var(--color-black);
     font-weight: bold;
     display: flex;
     justify-content: center;
 }
-
-.title .happy {
+.title .happy{
     color: var(--color-white);
 }
-
-.title .happy span,
-.title .birthday span {
+.title .happy span, .title .birthday span{
     transform: translateY(50px);
     opacity: 0;
     visibility: hidden;
     animation: txtTranslateY .5s var(--t) forwards;
 }
-
-@keyframes txtTranslateY {
-    100% {
+@keyframes txtTranslateY{
+    100%{
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
     }
 }
-
-.title .birthday {
+.title .birthday{
     color: var(--color-text-pink);
 }
 
-.title .hat {
+.title .hat{
     position: absolute;
     right: -80px;
     top: -350px;
@@ -206,31 +170,28 @@ body {
     z-index: -1;
     animation: topHat 4s 7s forwards ease;
 }
-
-@keyframes topHat {
-    20%, 30% {
+@keyframes topHat{
+    20%, 30%{
         top: -30px;
         transform-origin: left;
         transform: rotate(-40deg);
     }
-    35%, 100% {
+    35%, 100%{
         top: -30px;
         transform: rotate(0deg);
     }
 }
-
-.date__of__birth,
-.name {
+.date__of__birth, .name{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
     background-color: var(--color-text-pink);
     border-radius: 50px;
     margin-top: 20px;
     font-family: "Sriracha", cursive;
+    
 }
-
-.date__of__birth {
+.date__of__birth{
     border: 3px solid var(--color-black);
     position: relative;
     transform: translateY(-100px);
@@ -240,23 +201,23 @@ body {
     width: 0px;
     animation: dateOfBirth 5s 9s forwards;
 }
-
-@keyframes dateOfBirth {
-    20%, 40% {
+@keyframes dateOfBirth{
+    20%,40%{
         width: 0px;
         height: 0;
         transform: translateY(0px);
         opacity: 1;
         visibility: visible;
     }
-    45% {
+    45%{
         transform: translateY(0px);
         opacity: 1;
         visibility: visible;
         width: 300px;
+        height: 0px;
         height: 50px;
     }
-    50%, 100% {
+    50%,100%{
         transform: translateY(0px);
         opacity: 1;
         visibility: visible;
@@ -264,42 +225,34 @@ body {
         height: 50px;
     }
 }
-
-.name {
+.name{
     position: absolute;
     padding: 0px 40px;
     bottom: -20px;
     border: 3px solid var(--color-black);
 }
-
-.date__of__birth span,
-.name span {
+.date__of__birth span, .name span{
     font-weight: bold;
     margin: 0px 40px;
-    color: var(--color-white);
+    color: var(--color-white); /* Đảm bảo chữ trắng có tương phản tốt */
 }
-
-.date__of__birth span {
+.date__of__birth span{
     font-size: 1.2rem;
 }
-
-.name span {
+.name span{
     font-size: 1.7rem;
 }
-
-.right .box__account {
+.right .box__account{
     position: relative;
     transform: translateY(700px);
     animation: topBoxImage 8s 7s forwards ease-in;
 }
-
-@keyframes topBoxImage {
-    to {
+@keyframes topBoxImage{
+    to{
         transform: translateY(0);
     }
 }
-
-.content .right .image {
+.content .right .image{
     position: relative;
     width: 400px;
     height: 400px;
@@ -309,13 +262,12 @@ body {
     align-items: center;
     border: 6px solid var(--color-black);
 }
-
-.content .right .image img {
+.content .right .image img{
     width: 100%;
     object-fit: cover;
-}
 
-.cricle {
+}
+.cricle{
     position: absolute;
     top: 20px;
     right: 50px;
@@ -325,23 +277,22 @@ body {
     transform: scale(0);
     animation: scaleCricle 3s 15s forwards ease-in-out;
 }
-
 @keyframes scaleCricle {
-    0% {
+    0%{
         transform: scale(0);
     }
-    10% {
+    10%{
         transform: scale(1.3);
     }
-    20% {
+    20%{
         transform: scale(0.7);
     }
-    30%, 100% {
+    30%,100%{
         transform: scale(1);
     }
-}
 
-.text__cricle {
+}
+.text__cricle{
     width: 100px;
     height: 100px;
     background-color: var(--color-text-pink);
@@ -352,14 +303,12 @@ body {
     align-items: center;
     animation: rotateCricle 5s linear infinite;
 }
-
-@keyframes rotateCricle {
-    to {
+@keyframes rotateCricle{
+    to{
         transform: rotate(360deg);
     }
 }
-
-.text__cricle span {
+.text__cricle span{
     top: 0%;
     left: 50%;
     position: absolute;
@@ -370,47 +319,41 @@ body {
     text-transform: uppercase;
     font-size: 0.7rem;
 }
-
-.fa-heart {
+.fa-heart{
     color: var(--color-heart);
     filter: drop-shadow(0 0 3px var(--color-heart));
     animation: scaleHeart 1s infinite linear;
 }
-
-.cricle .fa-heart {
+.cricle .fa-heart{
     position: absolute;
     transform: scale(0.85);
 }
-
-@keyframes scaleHeart {
-    50% {
+@keyframes scaleHeart{
+    50%{
         transform: scale(1.2);
     }
 }
-
-.right .balloon_one {
+.right .balloon_one{
     position: absolute;
     top: -70px;
     left: -70px;
     animation: balloon1 2s infinite linear;
 }
-
-@keyframes balloon1 {
-    0%, 50%, 100% {
+@keyframes balloon1{
+    0%, 50%,100%{
         transform-origin: bottom right;
         transform: rotate(0deg);
     }
-    25% {
+    25%{
         transform-origin: bottom right;
         transform: rotate(3deg);
     }
-    75% {
+    75%{
         transform-origin: bottom right;
         transform: rotate(-3deg);
     }
 }
-
-.right .balloon_two {
+.right .balloon_two{
     position: absolute;
     top: 170px;
     right: -65px;
@@ -418,106 +361,94 @@ body {
     transform: rotate(10deg);
     animation: balloon2 2s infinite linear;
 }
-
 @keyframes balloon2 {
-    0%, 50%, 100% {
+    0%,50%,100%{
         transform-origin: bottom left;
         transform: rotate(10deg);
     }
-    25% {
+    25%{
         transform-origin: bottom left;
         transform: rotate(7deg);
     }
-    75% {
+    75%{
         transform-origin: bottom left;
         transform: rotate(13deg);
     }
 }
 
-.decorate_star {
+.decorate_star{
     position: absolute;
     transform: scale(0);
     background-color: var(--color-black);
     clip-path: polygon(0 50%, 35% 35%, 50% 0, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%);
-    animation: scaleCricle 3s var(--t) forwards,
-              scaleStar 2s 16s infinite ease-in-out;
+    animation: scaleCricle 3s var(--t) forwards, 
+            scaleStar 2s 16s infinite ease-in-out;
 }
-
-.decorate_star.star1 {
+.decorate_star.star1{
     width: 20px;
     height: 20px;
     top: 75px;
     left: 300px;
 }
-
-.decorate_star.star2 {
+.decorate_star.star2{
     width: 15px;
     height: 20px;
     top: 35px;
     right: 360px;
 }
-
-.decorate_star.star3 {
+.decorate_star.star3{
     width: 14px;
     height: 14px;
     top: 290px;
     left: 630px;
 }
-
-.decorate_star.star4 {
+.decorate_star.star4{
     width: 18px;
     height: 18px;
     bottom: 60px;
     left: 35px;
 }
-
-.decorate_star.star5 {
+.decorate_star.star5{
     width: 16px;
     height: 18px;
     bottom: 140px;
     left: 500px;
 }
-
 @keyframes scaleStar {
-    25% {
+    25%{
         transform: scale(0.8);
     }
-    50% {
+    50%{
         transform: scale(1.1);
     }
 }
-
-.decorate_bottom {
+.decorate_bottom{
     position: absolute;
     right: 0;
     bottom: -10px;
 }
-
-.decorate_flower--one {
+.decorate_flower--one{
     position: absolute;
     top: 250px;
     left: 50px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
 }
-
-.decorate_flower--two {
+.decorate_flower--two{
     position: absolute;
     top: 225px;
     left: 540px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
 }
-
-.decorate_flower--three {
+.decorate_flower--three{
     position: absolute;
     top: 150px;
     right: 235px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
 }
-
-.smiley__icon {
+.smiley__icon{
     position: absolute;
     bottom: 180px;
     left: 555px;
@@ -525,18 +456,18 @@ body {
     animation: scaleCricle 3s 15s forwards ease-in-out;
 }
 
-.box__letter {
+
+.box__letter{
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0,0,0,.5);
     width: 100%;
     height: 100%;
     z-index: 10;
     display: none;
 }
-
-.box__letter .letter__border {
+.box__letter .letter__border{
     position: absolute;
     width: 55vw;
     height: 450px;
@@ -546,11 +477,10 @@ body {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     display: none;
 }
-
-.letter__border .close {
+.letter__border .close{
     position: absolute;
     right: -10px;
     top: -10px;
@@ -564,29 +494,25 @@ body {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
 }
-
-.letter__border .letter {
+.letter__border .letter{
     width: 100%;
     height: 100%;
     background-color: var(--color-bg-letter);
     border-radius: 10px;
     padding-top: 15px;
 }
-
-.letter__border .letter .title__letter {
+.letter__border .letter .title__letter{
     text-align: center;
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
     font-size: 2.4rem;
-    color: var(--color-black);
+    color: var(--color-black); /* Đảm bảo chữ đen trên nền sáng */
 }
-
-.title__letter .fa-solid {
+.title__letter .fa-solid{
     margin-left: 5px;
     font-size: 1.3rem;
 }
-
-.letter__border .letter .content__letter {
+.letter__border .letter .content__letter{
     position: relative;
     width: 100%;
     height: 100%;
@@ -594,115 +520,98 @@ body {
     padding-top: 1.5rem;
     padding-bottom: 70px;
 }
-
-.letter__border .letter .content__letter .left {
+.letter__border .letter .content__letter .left{
     position: relative;
     width: 50%;
     height: 100%;
     padding: 1.7rem;
     border-right: 3px solid var(--color-border);
 }
-
-.content__letter .left #heart__letter {
+.content__letter .left #heart__letter{
     opacity: 0;
     width: 100%;
 }
-
-#heart__letter.animationOp {
+#heart__letter.animationOp{
     animation: opacityHeart 1s 1s forwards;
 }
-
-@keyframes opacityHeart {
-    to {
+@keyframes opacityHeart{
+    to{
         opacity: 1;
     }
 }
-
-.content__letter .left .heart {
+.content__letter .left .heart{
     position: absolute;
     opacity: 0;
 }
-
-.content__letter .left .heart.animation {
+.content__letter .left .heart.animation{
     animation: scaleHeartLetter 1s var(--t) infinite ease-in-out;
 }
-
-@keyframes scaleHeartLetter {
-    0% {
+@keyframes scaleHeartLetter{
+    0%{
         opacity: 1;
         transform: scale(0);
     }
-    10% {
+    10%{
         opacity: 1;
         transform: scale(1.3);
     }
-    20% {
+    20%{
         opacity: 1;
         transform: scale(0.7);
     }
-    30%, 100% {
+    30%,100%{
         opacity: 1;
         transform: scale(1);
     }
+    
 }
-
-.content__letter .left .heart_1 {
+.content__letter .left .heart_1{
     top: 90px;
     left: 30px;
 }
-
-.content__letter .left .heart_2 {
+.content__letter .left .heart_2{
     top: 20px;
     right: 70px;
 }
-
-.content__letter .left .heart_3 {
+.content__letter .left .heart_3{
     bottom: 50px;
     left: 145px;
 }
-
-.content__letter .left .heart_4 {
+.content__letter .left .heart_4{
     top: 140px;
     right: 35px;
 }
-
-.content__letter .right {
+.content__letter .right{
     position: relative;
     width: 50%;
 }
-
-.content__letter .right .love__img {
+.content__letter .right .love__img{
     opacity: 0;
     position: absolute;
     right: 20px;
     top: -50px;
 }
-
-.love__img.animationOp {
+.love__img.animationOp{
     animation: opacityHeart 1s 1s forwards;
 }
-
-.content__letter .right .text__letter {
+.content__letter .right .text__letter{
     margin-top: 60px;
     padding: 20px 15px 10px 15px;
     font-family: 'Dancing Script', cursive;
     font-size: 1.3rem;
-    color: var(--color-black);
+    color: var(--color-black); /* Đảm bảo chữ đen trong thư */
 }
-
-.content__letter .right #mewmew {
+.content__letter .right #mewmew{
     position: absolute;
     bottom: 0;
     right: 0;
     opacity: 0;
 }
-
-#mewmew.animationOp {
+#mewmew.animationOp{
     animation: opacityHeart 1s 1s forwards;
 }
 
-.content .right .day,
-.content .right .month {
+.content .right .day, .content .right .month{
     font-family: "Titan One", sans-serif;
     color: var(--color-white);
     text-shadow: 2px 4px 0 var(--color-black);
@@ -710,15 +619,502 @@ body {
     font-size: 2.5rem;
     position: absolute;
     -webkit-text-stroke: 0.5px var(--color-black);
+    display: none;
 }
-
-.content .right .day {
+.content .right .day{
     left: 30px;
 }
-
-.content .right .month {
+.content .right .month{
     right: 30px;
 }
+
+/* responsive */
+@media screen and (max-width:768px) {
+    body {
+        overflow-y: auto; /* Cho phép scroll dọc trên mobile nếu nội dung dài */
+    }
+    #wrapper {
+        height: auto;
+        min-height: 100vh;
+    }
+    .flag__birthday{
+        animation-delay: 0.2s;
+        flex-wrap: wrap; /* Cho phép wrap nếu cần */
+        justify-content: center;
+        gap: 10px;
+    }
+    .flag__birthday .flag__left,
+    .flag__birthday .flag__right{
+        width: 160px;
+        height: auto;
+        flex: 1;
+        min-width: 120px; /* Đảm bảo không quá nhỏ */
+    }
+    .flag__left{
+        transform: rotate(-10deg) translate(-20px,20px)!important;
+    }
+    .flag__right{
+        transform: rotate(10deg) translate(20px, 20px) scaleX(-1)!important;
+    }
+    #wrapper .content{
+        flex-direction: column;
+        padding-top: 1rem; /* Giảm padding trên mobile */
+        margin: 0 10px; /* Thêm margin để tránh sát mép */
+    }
+    #wrapper .content .left{
+        position: unset;
+    }
+    #wrapper .content .left,#wrapper .content .right{
+        width: 100%!important;
+    }
+    #wrapper .content .left .title{
+        font-size: 2rem;
+    }
+    .happy span:nth-child(1){
+        animation-delay: 1s;
+    }
+    .happy span:nth-child(2){
+        animation-delay: 1.2s;
+    }
+    .happy span:nth-child(3){
+        animation-delay: 1.4s;
+    }
+    .happy span:nth-child(4){
+        animation-delay: 1.6s;
+    }
+    .happy span:nth-child(5){
+        animation-delay: 1.8s;
+    }
+    .birthday span:nth-child(1){
+        animation-delay: 2s;
+    }
+    .birthday span:nth-child(2){
+        animation-delay: 2.2s;
+    }
+    .birthday span:nth-child(3){
+        animation-delay: 2.4s;
+    }
+    .birthday span:nth-child(4){
+        animation-delay: 2.6s;
+    }
+    .birthday span:nth-child(5){
+        animation-delay: 2.8s;
+    }
+    .birthday span:nth-child(6){
+        animation-delay: 3s;
+    }
+    .birthday span:nth-child(7){
+        animation-delay: 3.2s;
+    }
+    .birthday span:nth-child(8){
+        animation-delay: 3.4s;
+    }
+    .title .hat{
+        animation-delay: 3.5s;
+        right: -50px;
+    }
+    .title .hat img{
+        width: 85px;
+    }
+    .date__of__birth, .balloon_one, .balloon_two{
+        display: none;
+    }
+    .btn{
+        position: absolute;
+        bottom: -100px;
+    }
+    #wrapper .content .right{
+        margin-top: 40px;
+    }
+    .right .box__account{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transform: translateY(0);
+        animation: none!important;
+    }
+    .right .box__account .image{
+        width: 200px;
+        height: 200px;
+        transform: scale(0);
+        animation: scaleHeartLetter 2s 4s forwards!important;
+    }
+    .right .box__account .name{
+        padding: 0 20px;
+        transform: scale(0);
+        animation: scaleHeartLetter 2s 5s forwards!important;
+    }
+    .right .box__account .name span{
+        font-size: 1rem;
+        margin: 0 20px;
+    }
+    .cricle{
+        top: -20px;
+        right: 20px;
+        animation-delay: 6s;
+    }
+    .text__cricle{
+        width: 65px;
+        height: 65px;
+        border-width: 2px;
+    }
+    .text__cricle span{
+        transform-origin: 0 30px;
+        font-size: 0.5rem;
+    }
+    .content .right .day, .content .right .month{
+        display: block;
+        /* transform: scale(0); */
+        outline: none;
+        font-size: 1.8rem; /* Giảm size chữ ngày tháng trên mobile */
+    }
+    .decorate_star.star1 {
+        top: 125px;
+        left: 375px;
+        animation-delay: 5.2s;
+        transform: scale(0.8); /* Scale nhỏ hơn trên mobile */
+    }
+    .decorate_star.star2 {
+        top: 80px;
+        right: 360px;
+        animation-delay: 5.2s;
+        transform: scale(0.8);
+    }
+    .decorate_star.star3 {
+        top: 255px;
+        left: 300px;
+        animation-delay: 5.2s;
+        transform: scale(0.8);
+    }
+    .decorate_star.star4{
+        animation-delay: 5.2s;
+        transform: scale(0.8);
+    }
+    .decorate_star.star5 {
+        bottom: 140px;
+        left: 350px;
+        animation-delay: 5.2s;
+        transform: scale(0.8);
+    }
+    .decorate_flower--one{
+        animation-delay: 5.2s;
+        transform: scale(0.7);
+    }
+    .decorate_flower--two{
+        display: none;
+    }
+    .decorate_flower--three{
+        top: 45px;
+        animation-delay: 5.2s;
+        transform: scale(0.7);
+    }
+    .left .btn{
+        animation-delay: 6s;
+    }
+    .smiley__icon{
+        display: none;
+    }
+    .box__letter .letter__border{
+        width: 95%;
+        height: auto; /* Cho phép height linh hoạt */
+        min-height: 450px;
+    }
+    .letter__border .letter .title__letter{
+        font-size: 2rem;
+    }
+    .content__letter .left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content__letter .left .heart_2{
+        top: 50px;
+    }
+    .content__letter .left .heart_3 {
+        bottom: 60px;
+        left: 75px;
+    }
+    .content__letter .left .heart_4 {
+        top: 140px;
+        right: 15px;
+    }
+    .content__letter .right .love__img.animationOp img{
+        width: 110px;
+    }
+    .text__letter{
+        margin-top: 0px!important;
+        font-size: 1rem!important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.5rem; /* Giảm thêm font title */
+    }
+    .content {
+        padding-top: 0.5rem;
+        margin: 0 5px;
+    }
+    .flag__birthday .flag__left,
+    .flag__birthday .flag__right {
+        width: 120px;
+    }
+    .right .box__account .image {
+        width: 150px;
+        height: 150px;
+    }
+    .cricle {
+        right: 10px;
+    }
+    .text__cricle {
+        width: 50px;
+        height: 50px;
+    }
+    .text__cricle span {
+        font-size: 0.4rem;
+        transform-origin: 0 22px;
+    }
+    .content .right .day, .content .right .month {
+        font-size: 1.5rem;
+    }
+    .decorate_star {
+        transform: scale(0.6);
+    }
+    .box__letter .letter__border {
+        padding: 10px;
+    }
+    .letter__border .letter .title__letter {
+        font-size: 1.5rem;
+    }
+    .text__letter {
+        font-size: 0.9rem !important;
+    }
+}
+
+.boxMail{
+    position: fixed;
+    background: rgb(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.3);
+    visibility: hidden;
+    transition: all 0.5s;
+    z-index: 100000000;
+}
+.boxMail.active{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.boxMail .boxMail-container{
+    position: absolute;
+    width: 750px;
+    height: 500px;
+    display: flex;
+    margin: 0;
+    transform: scale(0.9);
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    transition: all 0.5s;
+}
+.boxMail .boxMail-container:hover{
+    transform: rotate(-5deg);
+    filter: drop-shadow(0 0 10px red);
+}
+.boxMail .boxMail-container:hover .card1{
+    transform: translate(-187px, -250px) rotateY(-140deg);
+}
+.boxMail .boxMail-container .card1,
+.boxMail .boxMail-container .card2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+}
+.boxMail .boxMail-container .card1{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(169, 0, 0), rgb(202, 0, 0) 30%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.boxMail-container .card1{
+    z-index: 1;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: all 1s ease-in-out;
+}
+.boxMail .boxMail-container .card1 .userImg{
+    position: relative;
+    width: 145px;
+    height: 145px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.boxMail .boxMail-container .card1 .userImg img{
+    position: absolute;
+    object-fit: cover;
+    width: calc(100%);
+    height: calc(100%);
+}
+.boxMail .boxMail-container .card1 h3{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    text-transform: uppercase;
+    width: 80%;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 5px;
+    transform: rotate(-5deg);
+    text-shadow: 0 0 5px white,
+                0 0 10px white;
+}
+.boxMail .boxMail-container .card2{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #e0e0e0, #ffffff 30%);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: all 1s;
+}
+.boxMail .boxMail-container .card2 .card2-content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #ffd2e4;
+    transition: all 1s;
+    overflow: hidden;
+}
+.boxMail .boxMail-container:hover .card2-content{
+    transform: translate(20px, 20px);
+    box-shadow: -1px -1px 5px rgb(0, 0, 0, 0.4);
+}
+.boxMail .boxMail-container .card2 h3{
+    font-family: 'Dancing Script', cursive;
+    padding: 20px 0px 10px 60px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 35px;
+    text-shadow: 0 0 8px red;
+}
+.boxMail .boxMail-container .card2:hover h3{
+    animation: texth3 3s forwards;
+    animation-delay: 2s;
+    transition: 1s;
+}
+@keyframes texth3{
+    0%{
+        opacity: 1;
+        visibility: visible;
+        padding: 20px 0px 10px 60px;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        padding: 20px 0px 10px 152px; 
+    }
+}
+.boxMail .boxMail-container .card2 h2{
+    font-family: 'Dancing Script', cursive;
+    padding: 0px 20px;
+    text-indent: 20px;
+    font-size: 25px;
+    opacity: 0;
+}
+.boxMail .boxMail-container .card2:hover h2{
+    animation: texth2 2s forwards;
+    animation-delay: 4s;
+    transition: 1s;
+}
+@keyframes texth2{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.boxMail .boxMail-container .card2 .card2-content .imageCute2{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    opacity: 0;
+    transition: 1s;
+}
+.boxMail .boxMail-container .card2 .card2-content:hover .imageCute2{
+    animation: cute3 1s linear infinite,
+                cute4 3s 2s forwards;
+    animation-delay: 2s;
+    transition: 1s;
+}
+@keyframes cute3{
+    0%{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    25%{
+        opacity: 1;
+        transform: rotate(5deg);
+    }
+    50%{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    75%{
+        opacity: 1;
+        transform: rotate(-5deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+@keyframes cute4{
+    0%{
+        left: 20px;
+    }
+    100%{
+        left: 100px;
+    }
+}
+.boxMail .boxMail-container .card2 .card2-content .imageCute2 img{
+    width: 40px;
+}
+.boxMail .fa-xmark{
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    padding: 10px 25px;
+    cursor: pointer;
+    color: white;
+    z-index: 10000000000000000;
+}
+
+
+
+
+
 
 .modal {
     display: flex;
@@ -739,7 +1135,7 @@ body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    width: 90%;
+    width: 90%; /* Responsive width cho modal */
     max-width: 300px;
 }
 
@@ -806,6 +1202,7 @@ body {
     background: #ff23c4;
 }
 
+/* New styles for Hello Kitty in corner with heart effects */
 .hello-kitty {
     position: fixed;
     bottom: 20px;
@@ -843,6 +1240,7 @@ body {
     }
 }
 
+/* Heart shooting from Kitty */
 .kitty-heart {
     position: absolute;
     bottom: 50px;
@@ -869,6 +1267,7 @@ body {
     }
 }
 
+/* Floating hearts for birthday effect */
 .birthday-heart {
     position: absolute;
     top: -20px;
@@ -898,6 +1297,7 @@ body {
     }
 }
 
+/* Generate multiple birthday hearts periodically - this would need JS to add classes dynamically, but base animation is here */
 body::before,
 body::after {
     content: '💖';
@@ -916,6 +1316,7 @@ body::after {
     animation-delay: 3s;
 }
 
+/* Additional pseudo-elements for more hearts */
 body > .content::before {
     content: '💕';
     position: absolute;
@@ -927,878 +1328,17 @@ body > .content::before {
     animation-delay: 1.5s;
 }
 
-/* Hello Kitty ở các góc */
-.hello-kitty-tl, .hello-kitty-tr, .hello-kitty-bl, .hello-kitty-br {
-    position: absolute;
-    z-index: 10;
-    background: transparent;
-    filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
-}
-
-.hello-kitty-tl {
-    top: 5%;
-    left: 5%;
-    animation: bounce 2.5s ease-in-out infinite;
-}
-
-.hello-kitty-tl img {
-    width: 100px;
-    height: auto;
-    background: transparent;
-    mix-blend-mode: lighten;
-    transform: rotate(10deg);
-    border-radius: 15px;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0px) rotate(10deg); }
-    50% { transform: translateY(-15px) rotate(10deg); }
-}
-
-.hello-kitty-tr {
-    top: 5%;
-    right: 5%;
-    animation: float-corner 3s ease-in-out infinite;
-}
-
-.hello-kitty-tr img {
-    width: 120px;
-    height: auto;
-    background: transparent;
-    mix-blend-mode: lighten;
-    transform: rotate(-5deg);
-    border-radius: 15px;
-}
-
-@keyframes float-corner {
-    0%, 100% { transform: translateY(0px) rotate(-5deg); }
-    50% { transform: translateY(-20px) rotate(-5deg); }
-}
-
-.hello-kitty-bl {
-    bottom: 5%;
-    left: 5%;
-    animation: wave 4s ease-in-out infinite;
-}
-
-.hello-kitty-bl img {
-    width: 110px;
-    height: auto;
-    background: transparent;
-    mix-blend-mode: lighten;
-    transform: rotate(-15deg);
-    border-radius: 15px;
-}
-
-@keyframes wave {
-    0%, 100% { transform: translateX(0px) rotate(-15deg); }
-    50% { transform: translateX(10px) rotate(-15deg); }
-}
-
-.hello-kitty-br {
-    bottom: 5%;
-    right: 5%;
-    animation: spin-float 5s linear infinite;
-}
-
-.hello-kitty-br img {
-    width: 130px;
-    height: auto;
-    background: transparent;
-    mix-blend-mode: lighten;
-    transform: rotate(20deg);
-    border-radius: 15px;
-}
-
-@keyframes spin-float {
-    0% { transform: translate(0px, 0px) rotate(20deg); }
-    25% { transform: translate(5px, -10px) rotate(20deg); }
-    50% { transform: translate(0px, -20px) rotate(20deg); }
-    75% { transform: translate(-5px, -10px) rotate(20deg); }
-    100% { transform: translate(0px, 0px) rotate(20deg); }
-}
-
-/* Media Queries cho thiết bị di động */
+/* Responsive for Hello Kitty */
 @media screen and (max-width: 768px) {
-    body {
-        overflow-y: auto;
-    }
-
-    #wrapper {
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .flag__birthday {
-        animation-delay: 0.2s;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        top: 5px;
-    }
-
-    .flag__birthday .flag__left,
-    .flag__birthday .flag__right {
-        width: 150px;
-        height: auto;
-        flex: 1;
-        min-width: 120px;
-    }
-
-    .flag__left {
-        transform: rotate(-10deg) translate(-10px, 10px) !important;
-    }
-
-    .flag__right {
-        transform: rotate(10deg) translate(10px, 10px) scaleX(-1) !important;
-    }
-
-    .content {
-        flex-direction: column;
-        padding-top: 1rem;
-        margin: 0 10px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .content .left,
-    .content .right {
-        width: 100% !important;
-        margin-bottom: 20px;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    .happy span:nth-child(1) { animation-delay: 1s; }
-    .happy span:nth-child(2) { animation-delay: 1.2s; }
-    .happy span:nth-child(3) { animation-delay: 1.4s; }
-    .happy span:nth-child(4) { animation-delay: 1.6s; }
-    .happy span:nth-child(5) { animation-delay: 1.8s; }
-    .birthday span:nth-child(1) { animation-delay: 2s; }
-    .birthday span:nth-child(2) { animation-delay: 2.2s; }
-    .birthday span:nth-child(3) { animation-delay: 2.4s; }
-    .birthday span:nth-child(4) { animation-delay: 2.6s; }
-    .birthday span:nth-child(5) { animation-delay: 2.8s; }
-    .birthday span:nth-child(6) { animation-delay: 3s; }
-    .birthday span:nth-child(7) { animation-delay: 3.2s; }
-    .birthday span:nth-child(8) { animation-delay: 3.4s; }
-
-    .title .hat {
-        animation-delay: 3.5s;
-        right: -30px;
-        top: -200px;
-    }
-
-    .title .hat img {
-        width: 60px;
-    }
-
-    .date__of__birth {
-        display: flex;
-        width: 200px;
-        height: 40px;
-        animation: dateOfBirth 5s 4s forwards;
-    }
-
-    .date__of__birth span {
-        font-size: 1rem;
-        margin: 0 20px;
-    }
-
-    .btn {
-        position: relative;
-        bottom: auto;
-        margin-top: 10px;
-        animation-delay: 5s;
-    }
-
-    #btn__letter {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
-
-    .right .box__account {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        transform: translateY(0);
-        animation: none !important;
-    }
-
-    .right .box__account .image {
-        width: 200px;
-        height: 200px;
-        transform: scale(0);
-        animation: scaleHeartLetter 2s 4s forwards !important;
-    }
-
-    .right .box__account .name {
-        padding: 0 20px;
-        transform: scale(0);
-        animation: scaleHeartLetter 2s 5s forwards !important;
-    }
-
-    .right .box__account .name span {
-        font-size: 1rem;
-        margin: 0 20px;
-    }
-
-    .cricle {
-        top: -20px;
-        right: 20px;
-        animation-delay: 6s;
-    }
-
-    .text__cricle {
-        width: 65px;
-        height: 65px;
-        border-width: 2px;
-    }
-
-    .text__cricle span {
-        transform-origin: 0 30px;
-        font-size: 0.5rem;
-    }
-
-    .content .right .day,
-    .content .right .month {
-        display: block;
-        font-size: 1.8rem;
-    }
-
-    .balloon_one,
-    .balloon_two {
-        display: block;
-    }
-
-    .balloon_one {
-        top: -50px;
-        left: -50px;
-    }
-
-    .balloon_one img {
-        width: 60px;
-    }
-
-    .balloon_two {
-        top: 100px;
-        right: -50px;
-    }
-
-    .balloon_two img {
-        width: 60px;
-    }
-
-    .decorate_star.star1 {
-        top: 100px;
-        left: 50px;
-        animation-delay: 5.2s;
-        transform: scale(0.8);
-    }
-
-    .decorate_star.star2 {
-        top: 50px;
-        right: 50px;
-        animation-delay: 5.2s;
-        transform: scale(0.8);
-    }
-
-    .decorate_star.star3 {
-        top: 200px;
-        left: 150px;
-        animation-delay: 5.2s;
-        transform: scale(0.8);
-    }
-
-    .decorate_star.star4 {
-        bottom: 50px;
-        left: 20px;
-        animation-delay: 5.2s;
-        transform: scale(0.8);
-    }
-
-    .decorate_star.star5 {
-        bottom: 100px;
-        left: 200px;
-        animation-delay: 5.2s;
-        transform: scale(0.8);
-    }
-
-    .decorate_flower--one {
-        top: 150px;
-        left: 20px;
-        animation-delay: 5.2s;
-        transform: scale(0.7);
-    }
-
-    .decorate_flower--two {
-        display: block;
-        top: 120px;
-        left: 200px;
-        animation-delay: 5.2s;
-        transform: scale(0.7);
-    }
-
-    .decorate_flower--three {
-        top: 80px;
-        right: 20px;
-        animation-delay: 5.2s;
-        transform: scale(0.7);
-    }
-
-    .smiley__icon {
-        display: block;
-        bottom: 50px;
-        left: 150px;
-        animation-delay: 6s;
-        transform: scale(0.7);
-    }
-
-    .smiley__icon img {
-        width: 60px;
-    }
-
-    .box__letter .letter__border {
-        width: 95%;
-        height: auto;
-        min-height: 400px;
-        padding: 10px;
-    }
-
-    .letter__border .letter .title__letter {
-        font-size: 1.8rem;
-    }
-
-    .content__letter {
-        flex-direction: column;
-        padding-bottom: 20px;
-    }
-
-    .content__letter .left {
-        width: 100%;
-        border-right: none;
-        border-bottom: 3px solid var(--color-border);
-        padding: 1rem;
-    }
-
-    .content__letter .right {
-        width: 100%;
-        padding: 1rem;
-    }
-
-    .content__letter .left .heart_2 {
-        top: 30px;
-        right: 50px;
-    }
-
-    .content__letter .left .heart_3 {
-        bottom: 30px;
-        left: 100px;
-    }
-
-    .content__letter .left .heart_4 {
-        top: 100px;
-        right: 20px;
-    }
-
-    .content__letter .right .love__img img {
-        width: 110px;
-    }
-
-    .content__letter .right .text__letter {
-        margin-top: 0 !important;
-        font-size: 1rem !important;
-        padding: 10px;
-    }
-
     .hello-kitty {
         width: 80px;
         bottom: 10px;
         right: 10px;
     }
-
+    
     .kitty-heart {
         font-size: 15px;
         bottom: 30px;
         right: 40px;
-    }
-
-    .hello-kitty-tl img {
-        width: 60px;
-    }
-
-    .hello-kitty-tr img {
-        width: 70px;
-    }
-
-    .hello-kitty-bl img {
-        width: 65px;
-    }
-
-    .hello-kitty-br img {
-        width: 75px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .title {
-        font-size: 1.5rem;
-    }
-
-    .content {
-        padding-top: 0.5rem;
-        margin: 0 5px;
-    }
-
-    .flag__birthday .flag__left,
-    .flag__birthday .flag__right {
-        width: 120px;
-    }
-
-    .right .box__account .image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .cricle {
-        right: 10px;
-    }
-
-    .text__cricle {
-        width: 50px;
-        height: 50px;
-    }
-
-    .text__cricle span {
-        font-size: 0.4rem;
-        transform-origin: 0 22px;
-    }
-
-    .content .right .day,
-    .content .right .month {
-        font-size: 1.5rem;
-    }
-
-    .balloon_one img,
-    .balloon_two img {
-        width: 50px;
-    }
-
-    .decorate_star {
-        transform: scale(0.6);
-    }
-
-    .decorate_flower--one,
-    .decorate_flower--two,
-    .decorate_flower--three {
-        transform: scale(0.6);
-    }
-
-    .smiley__icon img {
-        width: 50px;
-    }
-
-    .box__letter .letter__border {
-        padding: 10px;
-        min-height: 350px;
-    }
-
-    .letter__border .letter .title__letter {
-        font-size: 1.5rem;
-    }
-
-    .content__letter .right .text__letter {
-        font-size: 0.9rem !important;
-    }
-
-    .hello-kitty {
-        width: 70px;
-    }
-
-    .hello-kitty-tl img {
-        width: 50px;
-    }
-
-    .hello-kitty-tr img {
-        width: 60px;
-    }
-
-    .hello-kitty-bl img {
-        width: 55px;
-    }
-
-    .hello-kitty-br img {
-        width: 65px;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .flag__birthday .flag__left,
-    .flag__birthday .flag__right {
-        width: 100px;
-    }
-
-    .title {
-        font-size: 1.3rem;
-    }
-
-    .right .box__account .image {
-        width: 120px;
-        height: 120px;
-    }
-
-    .right .box__account .name span {
-        font-size: 0.9rem;
-    }
-
-    .hello-kitty {
-        width: 60px;
-    }
-
-    .hello-kitty-tl img {
-        width: 45px;
-    }
-
-    .hello-kitty-tr img {
-        width: 50px;
-    }
-
-    .hello-kitty-bl img {
-        width: 50px;
-    }
-
-    .hello-kitty-br img {
-        width: 55px;
-    }
-}
-
-.boxMail {
-    position: fixed;
-    background: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0.3);
-    visibility: hidden;
-    transition: all 0.5s;
-    z-index: 1000;
-}
-
-.boxMail.active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.boxMail .boxMail-container {
-    position: absolute;
-    width: 750px;
-    height: 500px;
-    display: flex;
-    margin: 0;
-    transform: scale(0.9);
-    -webkit-perspective: 2000px;
-    perspective: 2000px;
-    transition: all 0.5s;
-}
-
-.boxMail .boxMail-container:hover {
-    transform: rotate(-5deg);
-    filter: drop-shadow(0 0 10px red);
-}
-
-.boxMail .boxMail-container:hover .card1 {
-    transform: translate(-187px, -250px) rotateY(-140deg);
-}
-
-.boxMail .boxMail-container .card1,
-.boxMail .boxMail-container .card2 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid black;
-}
-
-.boxMail .boxMail-container .card1 {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgb(169, 0, 0), rgb(202, 0, 0) 30%);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.boxMail-container .card1 {
-    z-index: 1;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    transform-origin: left;
-    transition: all 1s ease-in-out;
-}
-
-.boxMail .boxMail-container .card1 .userImg {
-    position: relative;
-    width: 145px;
-    height: 145px;
-    background-color: white;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid white;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.boxMail .boxMail-container .card1 .userImg img {
-    position: absolute;
-    object-fit: cover;
-    width: calc(100%);
-    height: calc(100%);
-}
-
-.boxMail .boxMail-container .card1 h3 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 40px;
-    text-transform: uppercase;
-    width: 80%;
-    text-align: center;
-    line-height: 1.5;
-    letter-spacing: 5px;
-    transform: rotate(-5deg);
-    text-shadow: 0 0 5px white,
-                 0 0 10px white;
-}
-
-.boxMail .boxMail-container .card2 {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, #e0e0e0, #ffffff 30%);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    transform-origin: left;
-    transition: all 1s;
-}
-
-.boxMail .boxMail-container .card2 .card2-content {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background-color: #ffd2e4;
-    transition: all 1s;
-    overflow: hidden;
-}
-
-.boxMail .boxMail-container:hover .card2-content {
-    transform: translate(20px, 20px);
-    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.4);
-}
-
-.boxMail .boxMail-container .card2 h3 {
-    font-family: 'Dancing Script', cursive;
-    padding: 20px 0px 10px 60px;
-    opacity: 0;
-    visibility: hidden;
-    font-size: 35px;
-    text-shadow: 0 0 8px red;
-}
-
-.boxMail .boxMail-container .card2:hover h3 {
-    animation: texth3 3s forwards;
-    animation-delay: 2s;
-    transition: 1s;
-}
-
-@keyframes texth3 {
-    0% {
-        opacity: 1;
-        visibility: visible;
-        padding: 20px 0px 10px 60px;
-    }
-    100% {
-        opacity: 1;
-        visibility: visible;
-        padding: 20px 0px 10px 152px;
-    }
-}
-
-.boxMail .boxMail-container .card2 h2 {
-    font-family: 'Dancing Script', cursive;
-    padding: 0px 20px;
-    text-indent: 20px;
-    font-size: 25px;
-    opacity: 0;
-}
-
-.boxMail .boxMail-container .card2:hover h2 {
-    animation: texth2 2s forwards;
-    animation-delay: 4s;
-    transition: 1s;
-}
-
-@keyframes texth2 {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.boxMail .boxMail-container .card2 .card2-content .imageCute2 {
-    position: absolute;
-    top: 5px;
-    left: 20px;
-    opacity: 0;
-    transition: 1s;
-}
-
-.boxMail .boxMail-container .card2 .card2-content:hover .imageCute2 {
-    animation: cute3 1s linear infinite,
-               cute4 3s 2s forwards;
-    animation-delay: 2s;
-    transition: 1s;
-}
-
-@keyframes cute3 {
-    0% {
-        opacity: 1;
-        transform: rotate(0deg);
-    }
-    25% {
-        opacity: 1;
-        transform: rotate(5deg);
-    }
-    50% {
-        opacity: 1;
-        transform: rotate(0deg);
-    }
-    75% {
-        opacity: 1;
-        transform: rotate(-5deg);
-    }
-    100% {
-        opacity: 1;
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes cute4 {
-    0% {
-        left: 20px;
-    }
-    100% {
-        left: 100px;
-    }
-}
-
-.boxMail .boxMail-container .card2 .card2-content .imageCute2 img {
-    width: 40px;
-}
-
-.boxMail .fa-xmark {
-    position: fixed;
-    top: 0;
-    right: 0;
-    font-size: 30px;
-    padding: 10px 25px;
-    cursor: pointer;
-    color: white;
-    z-index: 1000;
-}
-
-/* Responsive cho boxMail */
-@media screen and (max-width: 768px) {
-    .boxMail .boxMail-container {
-        width: 90%;
-        height: auto;
-        min-height: 400px;
-        transform: scale(0.8);
-    }
-
-    .boxMail .boxMail-container .card1 {
-        width: 100%;
-        height: 50%;
-        top: 25%;
-    }
-
-    .boxMail .boxMail-container .card2 {
-        width: 100%;
-        height: 50%;
-        top: 75%;
-    }
-
-    .boxMail .boxMail-container:hover .card1 {
-        transform: translate(-50%, -25%) rotateY(-140deg);
-    }
-
-    .boxMail .boxMail-container .card1 .userImg {
-        width: 100px;
-        height: 100px;
-    }
-
-    .boxMail .boxMail-container .card1 h3 {
-        font-size: 24px;
-        letter-spacing: 3px;
-    }
-
-    .boxMail .boxMail-container .card2 h3 {
-        font-size: 20px;
-        padding: 10px 0px 5px 30px;
-    }
-
-    .boxMail .boxMail-container .card2:hover h3 {
-        padding: 10px 0px 5px 80px;
-    }
-
-    .boxMail .boxMail-container .card2 h2 {
-        font-size: 16px;
-        padding: 0px 10px;
-    }
-
-    .boxMail .boxMail-container .card2 .card2-content .imageCute2 img {
-        width: 30px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .boxMail .boxMail-container {
-        width: 95%;
-        min-height: 350px;
-        transform: scale(0.7);
-    }
-
-    .boxMail .boxMail-container .card1 .userImg {
-        width: 80px;
-        height: 80px;
-    }
-
-    .boxMail .boxMail-container .card1 h3 {
-        font-size: 20px;
-    }
-
-    .boxMail .boxMail-container .card2 h3 {
-        font-size: 18px;
-        padding: 10px 0px 5px 20px;
-    }
-
-    .boxMail .boxMail-container .card2:hover h3 {
-        padding: 10px 0px 5px 60px;
-    }
-
-    .boxMail .boxMail-container .card2 h2 {
-        font-size: 14px;
     }
 }
