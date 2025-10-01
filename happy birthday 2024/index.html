@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Happy birthday</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -282,10 +282,14 @@
                 display: flex;
                 justify-content: center;
                 gap: 10px;
+                flex-wrap: wrap; /* Thêm wrap để tránh overflow nếu cần */
+                padding: 0 10px;
             }
             .flag__birthday img {
                 width: 150px !important;
                 height: auto;
+                flex: 1;
+                min-width: 120px; /* Đảm bảo không quá nhỏ */
             }
             .box__account .image img {
                 width: 80%;
@@ -363,8 +367,49 @@
             .name span {
                 font-size: 1.2em;
             }
+            .flag__birthday {
+                gap: 5px;
+            }
             .flag__birthday img {
                 width: 120px !important;
+            }
+            .content {
+                margin: 5px;
+                padding: 10px;
+            }
+            .btn.mail button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            .box__account .image img {
+                width: 70%;
+                max-width: 150px;
+            }
+            .hello-kitty img {
+                width: 80px;
+            }
+            .love__img img {
+                width: 120px;
+            }
+            .text__letter p {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Thêm media query cho màn hình rất nhỏ (dưới 360px) */
+        @media (max-width: 360px) {
+            .flag__birthday img {
+                width: 100px !important;
+            }
+            .title h1 {
+                font-size: 1.3em;
+            }
+            .name span {
+                font-size: 1em;
+                white-space: normal; /* Cho phép wrap nếu cần trên màn nhỏ */
+            }
+            .content {
+                padding: 8px;
             }
         }
     </style>
@@ -698,7 +743,7 @@
 <source src="./ytmp3free.cc_happy-birthday-piano-instrumental-by-hsc501-youtubemp3free.org.mp3" type="audio/mpeg">  
 </audio> 
 
-G tần suất bằng cách dùng throttle (chỉ tạo mỗi 100ms)
+    // Giảm tần suất bằng cách dùng throttle (chỉ tạo mỗi 100ms)
     let lastHeartTime = 0;
     document.addEventListener('mousemove', function(e){
         const now = Date.now();
