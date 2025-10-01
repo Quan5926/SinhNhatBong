@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
@@ -26,6 +25,7 @@ body {
     padding: 0;
     height: 100%;
     background-image:linear-gradient(var(--color-pink), var(--color-pink));
+    overflow-x: hidden; /* Ngăn scroll ngang trên mobile */
 }
 #wrapper{
     position: relative;
@@ -234,6 +234,7 @@ body {
 .date__of__birth span, .name span{
     font-weight: bold;
     margin: 0px 40px;
+    color: var(--color-white); /* Đảm bảo chữ trắng có tương phản tốt */
 }
 .date__of__birth span{
     font-size: 1.2rem;
@@ -505,6 +506,7 @@ body {
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
     font-size: 2.4rem;
+    color: var(--color-black); /* Đảm bảo chữ đen trên nền sáng */
 }
 .title__letter .fa-solid{
     margin-left: 5px;
@@ -597,6 +599,7 @@ body {
     padding: 20px 15px 10px 15px;
     font-family: 'Dancing Script', cursive;
     font-size: 1.3rem;
+    color: var(--color-black); /* Đảm bảo chữ đen trong thư */
 }
 .content__letter .right #mewmew{
     position: absolute;
@@ -627,12 +630,25 @@ body {
 
 /* responsive */
 @media screen and (max-width:768px) {
+    body {
+        overflow-y: auto; /* Cho phép scroll dọc trên mobile nếu nội dung dài */
+    }
+    #wrapper {
+        height: auto;
+        min-height: 100vh;
+    }
     .flag__birthday{
         animation-delay: 0.2s;
+        flex-wrap: wrap; /* Cho phép wrap nếu cần */
+        justify-content: center;
+        gap: 10px;
     }
     .flag__birthday .flag__left,
     .flag__birthday .flag__right{
         width: 160px;
+        height: auto;
+        flex: 1;
+        min-width: 120px; /* Đảm bảo không quá nhỏ */
     }
     .flag__left{
         transform: rotate(-10deg) translate(-20px,20px)!important;
@@ -642,6 +658,8 @@ body {
     }
     #wrapper .content{
         flex-direction: column;
+        padding-top: 1rem; /* Giảm padding trên mobile */
+        margin: 0 10px; /* Thêm margin để tránh sát mép */
     }
     #wrapper .content .left{
         position: unset;
@@ -748,32 +766,39 @@ body {
         display: block;
         /* transform: scale(0); */
         outline: none;
+        font-size: 1.8rem; /* Giảm size chữ ngày tháng trên mobile */
     }
     .decorate_star.star1 {
         top: 125px;
         left: 375px;
         animation-delay: 5.2s;
+        transform: scale(0.8); /* Scale nhỏ hơn trên mobile */
     }
     .decorate_star.star2 {
         top: 80px;
         right: 360px;
         animation-delay: 5.2s;
+        transform: scale(0.8);
     }
     .decorate_star.star3 {
         top: 255px;
         left: 300px;
         animation-delay: 5.2s;
+        transform: scale(0.8);
     }
     .decorate_star.star4{
         animation-delay: 5.2s;
+        transform: scale(0.8);
     }
     .decorate_star.star5 {
         bottom: 140px;
         left: 350px;
         animation-delay: 5.2s;
+        transform: scale(0.8);
     }
     .decorate_flower--one{
         animation-delay: 5.2s;
+        transform: scale(0.7);
     }
     .decorate_flower--two{
         display: none;
@@ -781,6 +806,7 @@ body {
     .decorate_flower--three{
         top: 45px;
         animation-delay: 5.2s;
+        transform: scale(0.7);
     }
     .left .btn{
         animation-delay: 6s;
@@ -790,6 +816,8 @@ body {
     }
     .box__letter .letter__border{
         width: 95%;
+        height: auto; /* Cho phép height linh hoạt */
+        min-height: 450px;
     }
     .letter__border .letter .title__letter{
         font-size: 2rem;
@@ -816,6 +844,50 @@ body {
     .text__letter{
         margin-top: 0px!important;
         font-size: 1rem!important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.5rem; /* Giảm thêm font title */
+    }
+    .content {
+        padding-top: 0.5rem;
+        margin: 0 5px;
+    }
+    .flag__birthday .flag__left,
+    .flag__birthday .flag__right {
+        width: 120px;
+    }
+    .right .box__account .image {
+        width: 150px;
+        height: 150px;
+    }
+    .cricle {
+        right: 10px;
+    }
+    .text__cricle {
+        width: 50px;
+        height: 50px;
+    }
+    .text__cricle span {
+        font-size: 0.4rem;
+        transform-origin: 0 22px;
+    }
+    .content .right .day, .content .right .month {
+        font-size: 1.5rem;
+    }
+    .decorate_star {
+        transform: scale(0.6);
+    }
+    .box__letter .letter__border {
+        padding: 10px;
+    }
+    .letter__border .letter .title__letter {
+        font-size: 1.5rem;
+    }
+    .text__letter {
+        font-size: 0.9rem !important;
     }
 }
 
@@ -1063,6 +1135,8 @@ body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Responsive width cho modal */
+    max-width: 300px;
 }
 
 .modal-content h2 {
