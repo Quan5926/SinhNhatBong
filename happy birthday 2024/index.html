@@ -32,12 +32,19 @@
             box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
             height: 100vh; /* Đảm bảo wrapper full height để tránh reflow */
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         .content {
             box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.3);
             border-radius: 20px;
             margin: 20px;
             padding: 20px;
+            display: flex;
+            flex: 1;
+            flex-direction: row; /* Mặc định row cho PC */
+            justify-content: space-between;
+            align-items: center;
         }
         .title h1 {
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -74,6 +81,8 @@
            mix-blend-mode: lighten;/* Hack to blend white background with page (try 'screen' if Kitty is light-colored) */
            border-radius: 20px; /* Bo góc nhẹ cho Kitty */
            transition: transform 0.3s ease; /* Mượt mà hơn khi hover nếu cần */
+           max-width: 100%;
+           height: auto;
         }
         .hello-kitty:hover img {
             transform: scale(1.1); /* Phóng to nhẹ khi hover để tương tác */
@@ -99,6 +108,8 @@
             mix-blend-mode: lighten;
             transform: rotate(10deg);
             border-radius: 15px; /* Bo góc */
+            max-width: 100%;
+            height: auto;
         }
         @keyframes bounce {
             0%, 100% { transform: translateY(0px) rotate(10deg); }
@@ -120,6 +131,8 @@
             mix-blend-mode: lighten;
             transform: rotate(-5deg);
             border-radius: 15px;
+            max-width: 100%;
+            height: auto;
         }
         @keyframes float-corner {
             0%, 100% { transform: translateY(0px) rotate(-5deg); }
@@ -141,6 +154,8 @@
             mix-blend-mode: lighten;
             transform: rotate(-15deg);
             border-radius: 15px;
+            max-width: 100%;
+            height: auto;
         }
         @keyframes wave {
             0%, 100% { transform: translateX(0px) rotate(-15deg); }
@@ -162,6 +177,8 @@
             mix-blend-mode: lighten;
             transform: rotate(20deg);
             border-radius: 15px;
+            max-width: 100%;
+            height: auto;
         }
         @keyframes spin-float {
             0% { transform: translate(0px, 0px) rotate(20deg); }
@@ -242,6 +259,112 @@
             }
             .name span {
                 font-size: 1.5em; /* Giảm size trên mobile nếu cần */
+            }
+            /* Responsive cho .content: Stack vertically */
+            .content {
+                flex-direction: column !important;
+                text-align: center;
+                margin: 10px;
+                padding: 15px;
+            }
+            .left, .right {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .title h1 {
+                font-size: 2em;
+            }
+            .btn.mail button {
+                padding: 12px 24px;
+                font-size: 1em;
+            }
+            .flag__birthday {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+            .flag__birthday img {
+                width: 150px !important;
+                height: auto;
+            }
+            .box__account .image img {
+                width: 80%;
+                max-width: 200px;
+                height: auto;
+                position: relative;
+                bottom: -10px;
+            }
+            .balloon_one img, .balloon_two img {
+                width: 60px;
+                height: auto;
+            }
+            .hello-kitty {
+                top: 10%;
+                right: 5%;
+            }
+            .hello-kitty img {
+                width: 100px;
+            }
+            .cricle .text__cricle {
+                font-size: 0.8em;
+            }
+            .date__of__birth span {
+                font-size: 1.2em;
+            }
+            .decorate_star, .decorate_flower--one img, .decorate_flower--two img, .decorate_flower--three img {
+                transform: scale(0.7);
+            }
+            .decorate_bottom img, .smiley__icon img {
+                width: 60px;
+            }
+            /* Modal responsive */
+            #nameModal .modal-content {
+                width: 90%;
+                padding: 20px;
+            }
+            #nameInput {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+            }
+            #submitName {
+                width: 100%;
+                padding: 10px;
+            }
+            /* Letter box responsive */
+            .box__letter .letter__border {
+                width: 95%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .content__letter {
+                flex-direction: column;
+                text-align: center;
+            }
+            .left, .right {
+                width: 100%;
+            }
+            .love__img img {
+                width: 150px;
+            }
+            #mewmew {
+                width: 60px;
+            }
+            .text__letter p {
+                font-size: 1em;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title h1 {
+                font-size: 1.5em;
+            }
+            .name span {
+                font-size: 1.2em;
+            }
+            .flag__birthday img {
+                width: 120px !important;
             }
         }
     </style>
@@ -691,5 +814,41 @@ G tần suất bằng cách dùng throttle (chỉ tạo mỗi 100ms)
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
     }
+
+    // Thêm touch events cho mobile để tạo hearts khi chạm
+    document.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const x = touch.clientX;
+        const y = touch.clientY;
+
+        let body = document.querySelector('body');
+        let heart = document.createElement('span');
+        heart.style.position = 'fixed';
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+        heart.innerHTML = '💖';
+
+        let size = Math.random() * 10 + 10;
+        heart.style.fontSize = size + 'px';
+
+        let transformValue = Math.random() * 360;
+        heart.style.transform = 'rotate('+ transformValue +'deg)';
+
+        body.appendChild(heart);
+
+        setTimeout(function(){
+            heart.remove();
+        },1500);
+    }, { passive: false });
+
+    // Resize canvas on window resize for mobile
+    window.addEventListener('resize', function() {
+        const canvas = document.getElementById('confetti-canvas');
+        if (canvas) {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+    });
 </script>
 </html>
