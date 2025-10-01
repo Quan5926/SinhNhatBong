@@ -254,52 +254,59 @@
         }
         /* Hide on mobile to avoid overlap */
         @media (max-width: 768px) {
+            /* Scale up toàn bộ nội dung trên mobile để hiển thị đầy đủ hơn */
+            #wrapper {
+                transform: scale(1.1); /* Scale nhẹ để nội dung lớn hơn, điều chỉnh nếu cần */
+                transform-origin: top left;
+            }
             .hello-kitty-tl, .hello-kitty-tr, .hello-kitty-bl, .hello-kitty-br {
                 display: none;
             }
             .name span {
-                font-size: 1.5em; /* Giảm size trên mobile nếu cần */
+                font-size: 2em; /* Tăng size chữ tên trên mobile */
             }
             /* Responsive cho .content: Stack vertically */
             .content {
                 flex-direction: column !important;
                 text-align: center;
-                margin: 10px;
+                margin: 5px; /* Giảm margin để chiếm nhiều không gian hơn */
                 padding: 15px;
+                transform: scale(1.05); /* Scale nhẹ cho content */
             }
             .left, .right {
                 width: 100%;
-                margin-bottom: 20px;
+                margin-bottom: 10px; /* Giảm margin bottom */
             }
             .title h1 {
-                font-size: 2em;
+                font-size: 2.5em; /* Tăng font size cho title */
             }
             .btn.mail button {
-                padding: 12px 24px;
-                font-size: 1em;
+                padding: 15px 30px; /* Giữ padding lớn hơn */
+                font-size: 1.2em; /* Tăng font size button */
             }
             .flag__birthday {
                 display: flex;
                 justify-content: center;
-                gap: 10px;
+                gap: 5px; /* Giảm gap để fit hơn */
                 flex-wrap: wrap; /* Thêm wrap để tránh overflow nếu cần */
-                padding: 0 10px;
+                padding: 0 5px;
+                transform: scale(1.1); /* Scale flag */
             }
             .flag__birthday img {
-                width: 150px !important;
+                width: 200px !important; /* Tăng width flag trên mobile */
                 height: auto;
                 flex: 1;
-                min-width: 120px; /* Đảm bảo không quá nhỏ */
+                min-width: 150px; /* Tăng min-width */
             }
             .box__account .image img {
-                width: 80%;
-                max-width: 200px;
+                width: 90%; /* Tăng width ảnh account */
+                max-width: 250px;
                 height: auto;
                 position: relative;
                 bottom: -10px;
             }
             .balloon_one img, .balloon_two img {
-                width: 60px;
+                width: 80px; /* Tăng size balloon */
                 height: auto;
             }
             .hello-kitty {
@@ -307,38 +314,41 @@
                 right: 5%;
             }
             .hello-kitty img {
-                width: 100px;
+                width: 120px; /* Tăng size Kitty chính */
             }
             .cricle .text__cricle {
-                font-size: 0.8em;
+                font-size: 1em; /* Tăng font size cricle */
             }
             .date__of__birth span {
-                font-size: 1.2em;
+                font-size: 1.5em; /* Tăng size date */
             }
             .decorate_star, .decorate_flower--one img, .decorate_flower--two img, .decorate_flower--three img {
-                transform: scale(0.7);
+                transform: scale(0.9); /* Tăng scale decorate */
             }
             .decorate_bottom img, .smiley__icon img {
-                width: 60px;
+                width: 80px; /* Tăng size bottom icons */
             }
             /* Modal responsive */
             #nameModal .modal-content {
-                width: 90%;
+                width: 95%;
                 padding: 20px;
+                transform: scale(1.1);
             }
             #nameInput {
                 width: 100%;
-                padding: 10px;
+                padding: 12px; /* Tăng padding input */
                 margin: 10px 0;
+                font-size: 1.1em;
             }
             #submitName {
                 width: 100%;
-                padding: 10px;
+                padding: 12px;
+                font-size: 1.1em;
             }
             /* Letter box responsive */
             .box__letter .letter__border {
-                width: 95%;
-                max-width: 400px;
+                width: 98%; /* Tăng width letter box */
+                max-width: 500px;
                 margin: 0 auto;
             }
             .content__letter {
@@ -349,67 +359,81 @@
                 width: 100%;
             }
             .love__img img {
-                width: 150px;
+                width: 180px; /* Tăng size love img */
             }
             #mewmew {
-                width: 60px;
+                width: 80px; /* Tăng size mewmew */
             }
             .text__letter p {
-                font-size: 1em;
-                line-height: 1.4;
+                font-size: 1.2em; /* Tăng font size letter text */
+                line-height: 1.5;
             }
         }
 
         @media (max-width: 480px) {
+            /* Scale mạnh hơn cho màn nhỏ */
+            #wrapper {
+                transform: scale(1.15);
+            }
             .title h1 {
-                font-size: 1.5em;
+                font-size: 2em; /* Tăng thêm cho 480px */
             }
             .name span {
-                font-size: 1.2em;
+                font-size: 1.6em;
             }
             .flag__birthday {
-                gap: 5px;
+                gap: 3px;
             }
             .flag__birthday img {
-                width: 120px !important;
+                width: 160px !important; /* Tăng width flag nhỏ hơn */
             }
             .content {
-                margin: 5px;
-                padding: 10px;
+                margin: 3px;
+                padding: 12px;
+                transform: scale(1.1);
             }
             .btn.mail button {
-                padding: 10px 20px;
-                font-size: 0.9em;
+                padding: 12px 25px;
+                font-size: 1.1em;
             }
             .box__account .image img {
-                width: 70%;
-                max-width: 150px;
+                width: 85%;
+                max-width: 200px;
             }
             .hello-kitty img {
-                width: 80px;
+                width: 100px;
             }
             .love__img img {
-                width: 120px;
+                width: 150px;
             }
             .text__letter p {
-                font-size: 0.9em;
+                font-size: 1.1em;
+            }
+            .date__of__birth span {
+                font-size: 1.3em;
             }
         }
 
         /* Thêm media query cho màn hình rất nhỏ (dưới 360px) */
         @media (max-width: 360px) {
+            #wrapper {
+                transform: scale(1.2); /* Scale lớn hơn cho màn rất nhỏ */
+            }
             .flag__birthday img {
-                width: 100px !important;
+                width: 140px !important;
             }
             .title h1 {
-                font-size: 1.3em;
+                font-size: 1.8em;
             }
             .name span {
-                font-size: 1em;
+                font-size: 1.4em;
                 white-space: normal; /* Cho phép wrap nếu cần trên màn nhỏ */
             }
             .content {
-                padding: 8px;
+                padding: 10px;
+            }
+            .text__letter p {
+                font-size: 1em;
             }
         }
     </style>
